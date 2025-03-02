@@ -1,16 +1,29 @@
+--[[
+    █████╗ ███╗   ███╗ █████╗ ████████╗███████╗██╗  ██╗ █████╗ ██╗██╗     
+   ██╔══██╗████╗ ████║██╔══██╗╚══██╔══╝██╔════╝██║  ██║██╔══██╗██║██║     
+   ███████║██╔████╔██║███████║   ██║   █████╗  ███████║███████║██║██║     
+   ██╔══██║██║╚██╔╝██║██╔══██║   ██║   ██╔══╝  ██╔══██║██╔══██║██║██║     
+   ██║  ██║██║ ╚═╝ ██║██║  ██║   ██║   ███████╗██║  ██║██║  ██║██║██║ 
+   ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝
+   
+   📜 Script developed by Amatsukaii
+   📌 All rights reserved - 2025
+   🚀 Contact: claaaad
+]]
+
 EnablePrimaryMouseButtonEvents(true)
 
 function MoveRandom()
-    local randomX = math.random(-3, 3)  -- Variation en X
-    local randomY = math.random(-3, 3)  -- Variation en Y
-    local delay = math.random(10, 30)   -- Délai aléatoire
+    local randomX = math.random(-3, 3)  
+    local randomY = math.random(-3, 3)  
+    local delay = math.random(10, 30)   
 
     MoveMouseRelative(randomX, randomY)
     Sleep(delay)
 end
 
 function OnEvent(event, arg)
-    if event == "MOUSE_BUTTON_PRESSED" and arg == 4 then  -- Change 4 par ta touche assignée
+    if event == "MOUSE_BUTTON_PRESSED" and arg == 4 then  -- Change 4 to your chosen key
         repeat
             MoveRandom()
         until not IsMouseButtonPressed(4)
